@@ -28,6 +28,10 @@
       "rev": "ab621e4756465c9d354fce88cff2bd1aa7887065",
       "src": "https://github.com/cohama/lexima.vim"
     },
+    "lsp-status.nvim": {
+      "rev": "54f48eb5017632d81d0fd40112065f1d062d0629",
+      "src": "https://github.com/nvim-lua/lsp-status.nvim"
+    },
     "lualine.nvim": {
       "rev": "221ce6b2d999187044529f49da6554a92f740a96",
       "src": "https://github.com/nvim-lualine/lualine.nvim"
