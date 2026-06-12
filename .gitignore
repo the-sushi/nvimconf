@@ -1,0 +1,2 @@
+# Ignore parser directory since that's where treesitter binaries go.
+parser/
