@@ -36,3 +36,17 @@ setcol("lsp.type.enumMember.cpp",                "22896e")
 setcol("macro_identifier_func.lpp",              "7daaac")
 setcol("macro_identifier_part.lpp",              "a54d6f")
 setcol("string.lpp",                             "c3e88d")
+
+local function sethl(group, opts)
+  assert(group and (opts.fg or opts.bg))
+  local cmd = "highlight @"..group
+  if opts.fg then
+    cmd = cmd.." guifg="..opts.fg
+  end
+  if opts.bg then
+    cmd = cmd.." guibg="..opts.bg
+  end
+  vim.cmd(cmd)
+end
+
+

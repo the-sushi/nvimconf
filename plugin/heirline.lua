@@ -31,6 +31,16 @@ end
 
 -- * --------------------------------------------------------------------------
 
+local function statusLineHL()
+  if cond.is_active() then
+    return gethl "StatusLine"
+  else
+    return gethl "StatusLineNC"
+  end
+end
+
+-- * --------------------------------------------------------------------------
+
 local align = { provider = "%=" }
 local space = { provider = " " }
 
@@ -162,13 +172,7 @@ local file_name =
     return fname
   end,
 
-  hl = function()
-    if cond.is_active() then
-      return { fg = "dragonWhite" }
-    else
-      return { fg = "gray" }
-    end
-  end
+  hl = statusLineHL
 }
 
 -- * --------------------------------------------------------------------------
@@ -208,7 +212,7 @@ local file_type =
     return string.lower(vim.bo.filetype)
   end,
 
-  hl = { fg = gethl "Type" .fg }
+  hl = statusLineHL
 }
 
 -- * --------------------------------------------------------------------------
@@ -336,7 +340,7 @@ local term_name =
 
 local normal_status_line = 
 {
-  hl = { bg = "dragonBlack0" },
+  hl = statusLineHL,
 
   { condition = cond.is_active, vi_mode },
   space, file_name_block, space, 
@@ -352,7 +356,7 @@ local terminal_status_line =
     return cond.buffer_matches({buftype = { "terminal" }})
   end,
 
-  hl = { bg = "dragonBlack0" },
+  hl = statusLineHL,
 
   {
     condition = cond.is_active,
@@ -369,13 +373,7 @@ local terminal_status_line =
 
 local status_lines = 
 {
-  hl = function()
-    if cond.is_active() then
-      return "StatusLine"
-    else
-      return "StatusLineNC"
-    end
-  end,
+  hl = statusLineHL,
 
   fallthrough = false,
 
@@ -397,10 +395,6 @@ require "after" ("plugin", function()
   local colors = require "kanagawa.colors" .setup()
 
   hl.load_colors(colors.palette)
-
-  hl.setup
-  {
-    statusline = status_lines,
-  }
+  hl.setup { statusline = status_lines, }
 end)
 
