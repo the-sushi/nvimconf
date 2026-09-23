@@ -10,3 +10,4 @@ vim.treesitter.language.register('cpp', { 'cpp', 'h' })
 local log_path = vim.lsp.log.get_filename()
 io.open(log_path, "w+"):close()
 
+vim.g._ts_force_sync_parsing = true

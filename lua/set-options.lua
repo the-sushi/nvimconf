@@ -34,3 +34,18 @@ vim.diagnostic.config
   },
   underline = true
 }
+
+require "after" ("plugin", function()
+  local function hl(verb, attr, fg)
+    attr = attr and ("gui=NONE,"..attr) or ""
+    fg = fg and ("guifg="..fg) or ""
+    vim.cmd("highlight DiagnosticUnderline"..verb.." "..attr.." "..fg)
+  end
+
+  hl("Error", "dim", "#ff0000")
+  hl("Warn", "dim")
+  hl("Info", "dim")
+  hl("Hint", "dim")
+  hl("Ok", "")
+end)
+

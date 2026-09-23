@@ -5,6 +5,7 @@
 (":" @punctuation)
 (";" @punctuation)
 ("," @punctuation)
+("^" @punctuation)
 
 ("{" @punctuation.bracket)
 ("}" @punctuation.bracket)
@@ -47,6 +48,7 @@
 (typespec (identifier) @type)
 
 (attributes (identifier) @attribute)
+(attributes ":" @punctuation)
 
 (method (identifier) @function)
 

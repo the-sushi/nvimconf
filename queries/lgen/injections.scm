@@ -6,3 +6,6 @@
 
 ((profile_body) @injection.content
   (#set! injection.language "cpp"))
+
+((field_init) @injection.content
+  (#set! injection.language "cpp"))
