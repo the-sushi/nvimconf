@@ -39,6 +39,12 @@ m.buf.getLineCount = function(id)
   return vim.api.nvim_buf_line_count(id or 0)
 end
 
+m.buf.setIndentationOpts = function()
+  vim.bo.tabstop = 2
+  vim.bo.shiftwidth = 2
+  vim.bo.expandtab = true
+end
+
 --- Helpers related to windows.
 m.win = {}
 
@@ -71,6 +77,7 @@ end
 m.win.getCursorColumn = function(id)
   return m.win.getCursorPos(id).col
 end
+
 
 return m
 
