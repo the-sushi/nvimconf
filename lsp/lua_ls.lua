@@ -4,6 +4,10 @@ return
   {
     Lua = 
     {
+      runtime = 
+      {
+        enableLuaJITExtensions = true,
+      },
       diagnostics = 
       {
         disable = 
@@ -13,5 +17,5 @@ return
         },
       }
     }
-  }
+  },
 }

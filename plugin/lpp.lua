@@ -17,6 +17,15 @@ vim.filetype.add
 
 vim.lsp.config["lppls"] = 
 {
-  cmd = { "/home/sushi/src/enosi/lppls/_build/lppls" },
+  cmd = 
+  { 
+    "/home/sushi/src/enosi/lpp/_build/lppls",
+    "--log-path=lppls.log",
+    -- "--recording-path=lppls-recording",
+    -- "--message-log=lppls-messages.log",
+    -- "--pretty-message-log",
+    -- "--child-err-log=lppls-child.log",
+    -- "--child-arg=--resource-dir=/home/sushi/src/enosi/third_party/llvm/linux/lib/clang/23"
+  },
   filetypes = { "lpp" }
 }

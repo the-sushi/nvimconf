@@ -44,13 +44,13 @@ vim.keymap.set("n", "<c-e>", function()
   }
 end)
 
-vim.keymap.set("n", "<C-a>", function()
-  telescope.extensions.frecency.frecency 
-  {
-    workspace = "CWD",
-    theme = "ivy"
-  }
-end)
+-- vim.keymap.set("n", "<C-a>", function()
+--   telescope.extensions.frecency.frecency 
+--   {
+--     workspace = "CWD",
+--     theme = "ivy"
+--   }
+-- end)
 
 vim.keymap.set("n", "<C-g>", function()
   builtin.live_grep()

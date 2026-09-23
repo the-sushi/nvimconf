@@ -32,5 +32,5 @@ vim.diagnostic.config
   {
     virt_text_pos = "eol_right_align",
   },
-  underline = false
+  underline = true
 }
